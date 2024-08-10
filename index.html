@@ -4,8 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css//style.css">
 </head>
 <body>
-    
+    <div class="calculator">
+        <div class="calc-tittle">
+            <div class="calc-text">
+                <h2>Calculator</h2>
+            </div>
+            <div class="theme-toggle">
+                    <label class="toggle-option" for="theme-toggle-1">1</label>
+                    <input type="radio" id="theme-toggle-1" name="btn" value="1">
+                    <label class="toggle-option" for="theme-toggle-2">2</label>
+                    <input type="radio" id="theme-toggle-2" name="btn" value="2">
+                    <label class="toggle-option" for="theme-toggle-3">3</label>
+                    <input type="radio" id="theme-toggle-3" name="btn" value="3">
+
+                <div class="toggle-indicator"></div>
+            </div>
+        </div>
+
+        <div class="calc-input">
+            <input id="screen" type="text" placeholder="0">
+        </div>
+
+        <div class="calc-container">
+            <div class="row">
+                <button onclick="backspc()">CE</button>
+                <button onclick="fact()">x!</button>
+                <button class="btn">(</button>
+                <button class="btn">)</button>
+                <button onclick="div100()">%</button>
+                <button onclick="screen.value=''">AC</button>
+            </div>
+            <div class="row">
+                <button onclick="sin()">sin</button>
+                <button onclick="pi()">pi</button>
+                <button class="btn">7</button>
+                <button class="btn">8</button>
+                <button class="btn">9</button>
+                <button class="btn">/</button>
+            </div>
+            <div class="row">
+                <button onclick="cos()">cos</button>
+                <button onclick="log()">log</button>
+                <button class="btn">4</button>
+                <button class="btn">5</button>
+                <button class="btn">6</button>
+                <button class="btn">*</button>
+            </div>
+            <div class="row">
+                <button onclick="tan()">tan</button>
+                <button onclick="sqrt()">root</button>
+                <button class="btn">1</button>
+                <button class="btn">2</button>
+                <button class="btn">3</button>
+                <button class="btn">-</button>
+            </div>
+            <div class="row">
+                <button onclick="e()">e</button>
+                <button onclick="pow()">x <span style="position: relative; bottom: .4em; right: .1em;">2</span></button>
+                <button class="btn">0</button>
+                <button class="btn">.</button>
+                <button id="eval" onclick="screen.value=eval(screen.value)">=</button>
+                <button class="btn">+</button>
+            </div>
+        </div>
+    </div> 
+    <script src="script/script.js"></script>
 </body>
 </html>

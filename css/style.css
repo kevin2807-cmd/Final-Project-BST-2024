@@ -1,0 +1,124 @@
+body{
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.calculator{
+    width: 50%;
+    height: 600px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-tittle{
+    width: 100%;
+    display: flex;
+    margin-block: 10px;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.theme-toggle{
+    display: flex;
+    height: 30px;
+    width: 110px;
+    justify-content: center;
+    align-items: center;
+    background-color: #ddd;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.toggle-option{
+    flex: 1;
+    text-align: center;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    font-weight: bold;
+    color: #333;
+    padding: 15px;
+}
+
+input[type="radio"]{
+    display: none;
+}
+
+.toggle-indicator
+{
+    position: absolute;
+    background-color: aqua;
+    width: 33.33%;
+    height: 100%;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    transition: 0.3s ease;
+}
+
+#theme-toggle-1:checked ~ .toggle-indicator {
+    transform: translateX(0%);
+}
+
+#theme-toggle-2:checked ~ .toggle-indicator {
+    transform: translateX(100%);
+}
+
+#theme-toggle-3:checked ~ .toggle-indicator {
+    transform: translateX(200%);
+}
+
+#theme-toggle-1:checked ~ .toggle-container label[for="theme-toggle-1"],
+#theme-toggle-2:checked ~ .toggle-container label[for="theme-toggle-2"],
+#theme-toggle-33:checked ~ .toggle-container label[for="theme-toggle-3"] {
+    color: white;
+}
+
+
+.calc-input #screen{
+    width: 99%;
+    height: 85px;
+    text-align: right;
+    font-size: 4em;
+    border-radius: 8px ;
+    border: none;
+    outline: none;
+    margin: 2px 0;
+    background-color: #ffffff;
+    box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #cbced1;
+}
+
+.calc-container{
+    width: 100%;
+    height: 100%;  
+    margin-top: 10px;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+
+.calc-container .row button{
+    width: 105px;
+    height: 70px;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    margin: 5px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 8px #9ca8ba,
+                -5px -5px 8px #ffffff;  
+} 
