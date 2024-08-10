@@ -124,7 +124,7 @@ input[type="radio"]{
     margin: 5px;
     border-radius: 4px;
     background-color: #F5EDED;
-    box-shadow: 0px 5px bl
+    box-shadow: 0px 3.5px #ECCA9C;
 } 
 
 .row button:hover {
@@ -135,7 +135,13 @@ input[type="radio"]{
 
 #eval {
     background-color: orangered;
-    box-shadow: 5px green;
+    color: white;
+}
+
+#clear-button,
+#backspace-btn{
+    background-color: #74512D;
+    color: white;
 }
 
 
