@@ -12,19 +12,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
 var screen = document.getElementById('screen');
 function sin(){
-    screen.value = Math.sin(parseFloat(screen.value));
+    let valueInDegrees = parseFloat(screen.value);
+    let valueInRadians = valueInDegrees * (Math.PI / 180);
+    screen.value = Math.sin(valueInRadians);
 }
 function cos(){
-    screen.value = Math.cos(parseFloat(screen.value));
+    let valueInDegrees = parseFloat(screen.value);
+    let valueInRadians = valueInDegrees * (Math.PI / 180);
+    screen.value = Math.cos(valueInRadians);
 }
 function tan(){
-    screen.value = Math.tan(parseFloat(screen.value));
+    let valueInDegrees = parseFloat(screen.value);
+    if (valueInDegrees % 180 === 90) {
+        screen.value = "Undefined";
+    } else {
+        let valueInRadians = valueInDegrees * (Math.PI / 180);
+        screen.value = Math.tan(valueInRadians);
+    }
 }
 function sqrt(){
     screen.value = Math.sqrt(parseFloat(screen.value));
 }
 function log(){
-    screen.value = Math.log(parseFloat(screen.value));
+    screen.value = Math.log10(parseFloat(screen.value));
 }
 function e(){
     screen.value = 2.71828182846;
@@ -44,10 +54,9 @@ function fact(){
     }
     screen.value = f;
 }
-function backspc() {
+function backspc(){
     screen.value = screen.value.slice(0,- 1);
 }
-function div100()
-{
+function div100(){
     screen.value = parseFloat(screen.value)/100;
 }
