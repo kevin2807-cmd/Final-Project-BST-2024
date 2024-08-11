@@ -1,3 +1,11 @@
+:root
+{
+    --clr-body-bg: hsl(224, 26%, 31%);
+    --clr-calc-bg: hsl(31, 84%, 85%);
+
+}
+
+
 body{
     padding: 0;
     margin: 0;
@@ -5,12 +13,12 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #3b4664;
+    background-color: var(--clr-body-bg);
 }
 .calculator{
     width: 50%;
     height: 500px;
-    background-color: #F9DBBA;
+    background-color: var(--clr-calc-bg);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
@@ -29,18 +37,52 @@ body{
     box-sizing: border-box;
 }
 
+.toggle-option{
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
 .theme-toggle{
     display: flex;
-    height: 30px;
-    width: 110px;
+    height: 50px;
+    width: 130px;
     justify-content: center;
     align-items: center;
     background-color: #181f32;
-    border-radius: 20px;
+    border-radius: 999px;
     position: relative;
     overflow: hidden;
+    margin-inline: 10px;
 }
 
+#theme-toggle-1,
+#theme-toggle-2,
+#theme-toggle-3{
+    margin-inline: 10px;
+    margin-block: 3px;
+}
+
+.theme-toggle input[type="radio"]{
+    appearance: none;
+    width: 1rem;
+    height: 1rem;
+    outline: 3px solid hsl(31, 84%, 85%);;
+    border-radius: 50%;
+    outline-offset: 3px;
+}
+
+.theme-toggle input[type="radio"]:checked{
+    background-color: hsl(31, 84%, 85%);;
+}
+
+
+
+/* 
 .toggle-option{
     flex: 1;
     text-align: center;
@@ -67,9 +109,9 @@ input[type="radio"]{
     left: 0;
     z-index: 0;
     transition: 0.3s ease;
-}
+} */
 
-#theme-toggle-1:checked ~ .toggle-indicator {
+/* #theme-toggle-1:checked ~ .toggle-indicator {
     transform: translateX(0%);
 }
 
@@ -85,7 +127,7 @@ input[type="radio"]{
 #theme-toggle-2:checked ~ .toggle-container label[for="theme-toggle-2"],
 #theme-toggle-33:checked ~ .toggle-container label[for="theme-toggle-3"] {
     color: white;
-}
+} */
 
 
 .calc-input #screen{
@@ -142,6 +184,21 @@ input[type="radio"]{
 #backspace-btn{
     background-color: #74512D;
     color: white;
+}
+
+:root:has(#theme-toggle-1:checked){
+    --clr-body-bg: hsl(224, 26%, 31%);
+    --clr-calc-bg: hsl(31, 84%, 85%);
+}
+
+:root:has(#theme-toggle-2:checked){
+    --clr-body-bg: #331D2C;
+    --clr-calc-bg: #EFE1D1;
+}
+
+:root:has(#theme-toggle-3:checked){
+    --clr-body-bg: #6D5D6E;
+    --clr-calc-bg: #93B1A6;
 }
 
 
